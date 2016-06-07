@@ -5,14 +5,15 @@ import javax.persistence.*;
 /**
  * Created by vutichenko on 30.05.2016.
  */
-@Table
+@Entity
+@Table(name = "User")
 public class User {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name ="name")
+    @Column(name ="login", unique = true)
     private String login;
     @Column(name = "password")
     private String password;

@@ -19,21 +19,22 @@ public class BasicController {
     @Autowired
     UserDao dao;
     @RequestMapping(method = RequestMethod.GET)
+    //here recurcive redirection
     public String sayHello(ModelMap model) {
-        User user = new User();
+       /* User user = new User();
         user.setPassword("12345");
         user.setLogin("login1");
-        dao.updateUser(user);
-        model.addAttribute(dao.getUserByLogin("login1").getPassword(), "Hello World Again, from Spring 4 MVC");
+        dao.updateUser(user);*/
+        model.addAttribute("123321", "Hello World Again, from Spring 4 MVC");
         return "welcome";
     }
     @RequestMapping(value = "/playwithme", method = RequestMethod.GET)
     public String sayHelloAgain(ModelMap model) {
-        User user = new User();
+       /* User user = new User();
         user.setPassword("12345");
         user.setLogin("login1");
-        dao.updateUser(user);
-        model.addAttribute(dao.getUserByLogin("login1").getPassword(), "Hello World Again, from Spring 4 MVC");
+        dao.updateUser(user);*/
+        model.addAttribute("gg my lord", "Hello World Again, from Spring 4 MVC");
         return "welcome";
     }
 }

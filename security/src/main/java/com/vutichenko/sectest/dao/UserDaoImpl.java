@@ -12,12 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Created by vutichenko on 30.05.2016.
  */
 public class UserDaoImpl implements UserDao {
+
+    @Autowired
+    SessionFactory sessionFactory;
+
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-    @Autowired
-    SessionFactory sessionFactory;
     @Override
     public void updateUser(User user) {
         Session session = this.sessionFactory.openSession();
